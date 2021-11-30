@@ -1,5 +1,7 @@
 # Linaria rebuild twice issue demo
 
+For more details see https://github.com/callstack/linaria/issues/878
+
 ## Reproduce steps
 
 1. Run `yarn`
