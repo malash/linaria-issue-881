@@ -16,12 +16,7 @@ module.exports = {
     filename: "[name].bundle.js",
   },
   optimization: { noEmitOnErrors: true },
-  plugins: [
-    new webpack.DefinePlugin({
-      "process.env": { NODE_ENV: JSON.stringify(process.env.NODE_ENV) },
-    }),
-    new MiniCssExtractPlugin({ filename: "styles.css" }),
-  ],
+  plugins: [new MiniCssExtractPlugin({ filename: "styles.css" })],
   module: {
     rules: [
       {
@@ -56,8 +51,12 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
-    publicPath: "/dist/",
-    contentBase: path.join(__dirname, "public"),
+    devMiddleware: {
+      publicPath: "/dist/",
+    },
+    static: {
+      directory: path.join(__dirname, "public"),
+    },
     compress: true,
     port: 8080,
   },
