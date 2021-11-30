@@ -7,9 +7,9 @@
     "start": "webpack-dev-server --hot --inline"
   },
   "dependencies": {
+    "linaria": "^1.1.0",
     "react": "^16.5.2",
-    "react-dom": "^16.5.2",
-    "linaria": "^1.1.0"
+    "react-dom": "^16.5.2"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
