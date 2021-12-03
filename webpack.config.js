@@ -23,9 +23,11 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: [
+          {
+            // toggle this line to prevent issue
+            loader: "thread-loader",
+          },
           { loader: "babel-loader" },
-          // un-comment this line to fix the issue
-          // { loader: require.resolve("./bugfix/replaceRequireRequestLoader") },
           {
             loader: "linaria/loader",
             options: { sourceMap: dev },
