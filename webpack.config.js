@@ -29,8 +29,11 @@ module.exports = {
           },
           { loader: "babel-loader" },
           {
-            loader: "linaria/loader",
-            options: { sourceMap: dev },
+            loader: "@linaria/webpack-loader",
+            options: {
+              sourceMap: dev,
+              cacheProvider: require.resolve("./linariaFileCache"),
+            },
           },
         ],
       },
